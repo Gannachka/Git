@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 public abstract class Page {
 
     protected WebDriver driver;
-    protected final int WAIT_TIMEOUT_SECONDS = 30;
+    protected final int WAIT_TIMEOUT_SECONDS = 10;
 
 
     protected Page(WebDriver driver) {
