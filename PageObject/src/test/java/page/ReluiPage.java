@@ -15,7 +15,7 @@ public class ReluiPage extends Page {
     @FindBy(xpath = "//div[@datatype=\"4810438013055\"]")
     private WebElement addButton;
 
-    @FindBy(xpath ="//*[@id='content']/descendant::a[@href='https://relouis.by/product/nude-matte-complimenti/'][ text()='Выбрать']" )
+    @FindBy(xpath ="//*[@id='content']/descendant::a[contains(@style, 'background-color: #b47a7b; ')]")
     private WebElement addProductButton;
 
     public ReluiPage(WebDriver driver){
