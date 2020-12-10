@@ -14,7 +14,7 @@ public class ReluiProductPage extends Page {
     @FindBy(xpath = "//div[@datatype=\"4810438017961\"]")
     private WebElement addButton;
 
-    @FindBy ( xpath = "//*[@id='content']/descendant::a[@style='background-color: #b47a7b; ']")
+    @FindBy ( xpath = "//div[@datatype=\"3\"]")
     private WebElement lipstickColor;
 
     public ReluiProductPage chooseColor() {
