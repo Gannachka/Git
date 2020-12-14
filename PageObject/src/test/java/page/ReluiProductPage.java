@@ -14,14 +14,21 @@ public class ReluiProductPage extends Page {
     @FindBy(xpath = "//div[@datatype=\"4810438017961\"]")
     private WebElement addButton;
 
-    @FindBy ( xpath = "//div[@datatype=\"3\"]")
-    private WebElement lipstickColor;
+    @FindBy(xpath = "//div[contains(@class,\"product-info-colors-container grid\")]//div[contains(text(),\"$\")]")
+    private WebElement colorPattern;
 
-    public ReluiProductPage chooseColor() {
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.elementToBeClickable(lipstickColor))
-                .click();
+
+
+    public static String   COLOR_PATTERN ="//div[contains(@class,\"product-info-colors-container grid\")]//div[contains(text(),\"$\")]";
+
+
+
+
+
+    public ReluiProductPage chooseColor(String color) {
+        driver.findElement(By.xpath(COLOR_PATTERN.replace("$",color))).click();
         return this;
+
     }
     public ReluiProductPage addToBag() {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
@@ -31,7 +38,7 @@ public class ReluiProductPage extends Page {
     }
     public ReluiBagPage goToBag() {
         WebElement goToCartButton = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Перейти в корзину")));
+                .until(ExpectedConditions.elementToBeClickable(By.linkText("Перейти в корзину")));
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.elementToBeClickable(goToCartButton));
         goToCartButton.click();

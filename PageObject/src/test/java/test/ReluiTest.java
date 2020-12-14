@@ -44,7 +44,7 @@ class ReluiTest {
         WebElement itemColor=new ReluiPage(driver)
                 .openPage()
                 .goToProduct()
-                .chooseColor()
+                .chooseColor("13")
                 .addToBag()
                 .goToBag()
                 .getProductColor();
